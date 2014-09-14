@@ -30,5 +30,12 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.5;
+}
+
+h1.center {
+  text-align: center;
+}
+
+h3.center {
+  text-align: center;
 }

@@ -8,6 +8,8 @@
 </ul>
 </div>
 
+<h2>Create a New Track:</h2>
+
 <div class= "track-form">
 	<%= form_for(Track.new, remote: true, id: "event-#{@event.id}") do |f| %>
 			<%= f.text_field :name, class: "form-control", placeholder: "name" %>

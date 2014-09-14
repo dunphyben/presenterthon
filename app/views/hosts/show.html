@@ -10,10 +10,12 @@
 </ul>
 </div>
 
+<h2>Create a New Event:</h2>
+
 <div class= "event-form">
 	<%= form_for(Event.new, remote: true) do |f| %>
 			<input type="textbox"  class="form-control" name="name" placeholder="Name">
-			<input type="textbox"  class="form-control" name="phone" placeholder="Phone">
+			<!-- <input type="textbox"  class="form-control" name="phone" placeholder="Phone">
 			<input type="textbox"  class="form-control" name="url1" placeholder="Url 1">
 			<input type="textbox"  class="form-control" name="url2" placeholder="Url 2">
 			<input type="textbox"  class="form-control" name="location_name" placeholder="Location Name">
@@ -22,7 +24,8 @@
 			<input type="textbox" class="form-control" name="city" placeholder="City">
 			<input type="textbox" class="form-control" name="state" placeholder="State">
 			<input type="textbox" class="form-control" name="zip" placeholder="Zip">
-			<input type="textbox" class="form-control" name="country" placeholder="Country">
+			<input type="textbox" class="form-control" name="country" placeholder="Country"> -->
+			<br>
 			<button type="submit" class="button button-large button-highlight">New Event</button>
 	<%end%>
 </div>
