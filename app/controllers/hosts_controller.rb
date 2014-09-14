@@ -6,7 +6,8 @@ class HostsController < ApplicationController
 
 	def show
 		@host = current_host
-		# @events = current_host.events
+		@events = current_host.events
+
 	end
 
 end
