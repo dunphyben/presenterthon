@@ -15,14 +15,16 @@ def show
 	@track = Track.find(track_id)
 end
 
-def send_emails
+def send_email
 	# track_id = params["id"]
 	# @track = Track.find(track_id)
+	binding.pry
+	email_template = File.open()
 	Mailjet::MessageDelivery.create(
 		from: "dunphy.ben@gmail.com", 
 		to: ["jwrobes@gmail.com", "j3pydev@gmail.com"],
 		subject: "Mailjet Test",
-		text: "This is a test"
+		html: "This is a test"
 	)
 end
 

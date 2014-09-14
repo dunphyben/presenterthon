@@ -4,13 +4,13 @@
 		<% @track.presentations.each do |presentation| %>
 			<li><%= link_to "#{presentation.name}", presentation_path(presentation)%></li>
 		<% end %>	
-	</ul>
-
-	<div class= "track-form">
-	<%= form "event-#{@event.id}" do |f| %>
-			<%= f.text_field :email, class: "form-control", placeholder: "email" %>
-
-			<%= f.hidden_field :event_id, value: @event.id %>
-			<button type="submit" class="button button-large button-highlight">Email Invitations</button>
-	<%end%>
+</ul>
+<h2>Emails for Presenters</h2>
+<div class= "track-form">
+	<%= form_tag('/tracks/send_email', remote: true) do %>
+			<%= text_field :email1, class: "form-control", placeholder: "email1" %>
+			<%= text_field :email2, class: "form-control", placeholder: "email2" %>
+			<%= text_field :email3, class: "form-control", placeholder: "email3" %>
+			<button type="submit" class="button button-large button-highlight">Send Emails</button>
+	<%end%> 
 </div>

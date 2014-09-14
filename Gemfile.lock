@@ -326,6 +326,7 @@ DEPENDENCIES
   meta_request
   minitest
   nested_form
+  nokogiri
   paper_trail (~> 3.0.1)
   paperclip!
   pg

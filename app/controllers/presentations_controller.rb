@@ -18,4 +18,8 @@ class PresentationsController < ApplicationController
 		@presentation = Presentation.find(params[:id])
 	end
 
+	def send_email
+		binding.pry
+	end
+
 end

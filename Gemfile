@@ -22,6 +22,7 @@ gem 'nested_form'
 gem 'paper_trail', '~> 3.0.1'
 gem 'pundit' # authorization
 gem 'mailjet', git: 'https://github.com/mailjet/mailjet-gem.git'
+gem 'nokogiri'
 
 group :development do
   gem 'better_errors'

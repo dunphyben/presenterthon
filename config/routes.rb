@@ -19,7 +19,7 @@ root to: 'landing_page#index'
   resources :presentations
   
   
-
+  post "tracks/send_email" => 'tracks#send_email'
 
 
 
