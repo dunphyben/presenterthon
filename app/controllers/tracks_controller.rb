@@ -1,15 +1,18 @@
+
 class TracksController < ApplicationController
 
 
 def create
-	binding.pry
-	@track = Track.new({name: params[:name]})
-	current_host.events << @event
-	render json: {success: true, name: @event.name, id: @event.id }
+	track_params = params["track"]
+	@track = Track.new({name: track_params[:name]})
+	@event = Event.find(track_params[:event_id])
+	@event.tracks << @track
+	render json: {success: true, name: @track.name, id: @track.id }
 end
 
 def show
-	@event = Track.find(params[:id])
+	track_id = params["id"]
+	@track = Track.find(track_id)
 end
 
 

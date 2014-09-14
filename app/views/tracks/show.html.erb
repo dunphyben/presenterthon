@@ -1,9 +1,2 @@
-<h2><%= @event.name %></h2>
+<h2>The Track is: <%= @track.name %></h2>
 
-<div class="presentations">
-	<ul class= "track-list">
-		<% @track.presentations.each do |presentation| %>
-			<li><%= link_to "#{presentation.name}", presentation_path(event)%></li>
-		<% end %>	
-</ul>
-</div>

@@ -1,4 +1,4 @@
-<h2><%= @event.name %></h2>
+<h2>The event is: <%= @event.name %></h2>
 
 <div class="tracks">
 	<ul class= "track-list">
@@ -10,7 +10,9 @@
 
 <div class= "track-form">
 	<%= form_for(Track.new, remote: true, id: "event-#{@event.id}") do |f| %>
-			<input type="textbox"  class="form-control" name="name" placeholder="Name">
+			<%= f.text_field :name, class: "form-control", placeholder: "name" %>
+
+<!-- 			<input type="textbox"  class="form-control" name="name" placeholder="Name">
 			<input type="textbox"  class="form-control" name="start_time" placeholder="Phone">
 			<input type="textbox"  class="form-control" name="end_time" placeholder="Url 1">
 			<input type="textbox"  class="form-control" name="url2" placeholder="Url 2">
@@ -21,7 +23,8 @@
 			<input type="textbox" class="form-control" name="state" placeholder="State">
 			<input type="textbox" class="form-control" name="zip" placeholder="Zip">
 			<input type="textbox" class="form-control" name="country" placeholder="Country">
-			<input type="textbox" style="display: hidden;" value= <%=@event.id%> >
+			<input type="hidden" id="event-id" name="event_id" value=#{@event.id} /> -->
+			<%= f.hidden_field :event_id, value: @event.id %>
 			<button type="submit" class="button button-large button-highlight">New Event</button>
 	<%end%>
 </div>
