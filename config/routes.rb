@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   devise_for :hosts
   devise_for :users
+
+root to: 'landing_page#index'
+
+resources :hosts do
+  resources :events
+end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
