@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :hosts
   devise_for :users
+
+root to: 'landing_page#index'
 
   resources :hosts do
     resources :events 
@@ -12,11 +15,11 @@ Rails.application.routes.draw do
   resources :tracks do
     resources :presentations
   end
+  
+  
 
-  # resources :presentations
-  
-  resources :users
-  
+
+
 
 
 
