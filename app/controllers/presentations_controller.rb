@@ -5,16 +5,16 @@ class PresentationsController < ApplicationController
 	end
 
 	def create
-		presentations_params = params["presentation"]
-		@presentation = Presentation.new({name: presentations_params[:name]})
-		@track = Track.find(track_params[:track_id])
-		@track.presentation << @track
+		presentation_params = params["presentation"]
+		@presentation = Presentation.new({name: presentation_params[:name]})
+		@track = Track.find(presentation_params[:track_id])
+		@track.presentations << @presentation
+		binding.pry
 		render json: {success: true, name: @presentation.name, id: @presentation.id }
 
 	end
 
 	def show
-		binding.pry
 		@presentation = Presentation.find(params[:id])
 	end
 
