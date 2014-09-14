@@ -42,6 +42,8 @@ group :development, :test do
   gem 'pry'
   gem 'dotenv-rails'
   gem 'rerun'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :test do

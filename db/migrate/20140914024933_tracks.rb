@@ -13,7 +13,6 @@ class Tracks < ActiveRecord::Migration
       t.string :state
       t.string :zip
       t.string :country
-
       t.timestamps
 	end
   end

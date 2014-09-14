@@ -4,9 +4,22 @@ Rails.application.routes.draw do
 
 root to: 'landing_page#index'
 
-resources :hosts do
-  resources :events
-end
+  resources :hosts do
+    resources :events 
+  end  
+
+  resources :events do
+    resources :tracks
+  end
+
+  resources :tracks do
+    resources :presentations
+  end
+  
+  
+
+
+
 
 
 
