@@ -21,7 +21,7 @@ gem 'jquery-star-rating-rails'
 gem 'nested_form'
 gem 'paper_trail', '~> 3.0.1'
 gem 'pundit' # authorization
-gem 'mailjet', github: 'mailjet/mailjet-gem'
+gem 'mailjet', git: 'https://github.com/mailjet/mailjet-gem.git'
 
 group :development do
   gem 'better_errors'

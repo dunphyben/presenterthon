@@ -18,7 +18,12 @@ end
 def send_emails
 	# track_id = params["id"]
 	# @track = Track.find(track_id)
-	Mailjet::MessageDelivery.create(from: "dunphy.ben@gmail.com", to: ["jwrobes@gmail.com", "j3pydev@gmail.com"], subject: "Mailjet Test", text: "This is a test")
+	Mailjet::MessageDelivery.create(
+		from: "dunphy.ben@gmail.com", 
+		to: ["jwrobes@gmail.com", "j3pydev@gmail.com"],
+		subject: "Mailjet Test",
+		text: "This is a test"
+	)
 end
 
 
