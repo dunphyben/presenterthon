@@ -15,6 +15,8 @@ root to: 'landing_page#index'
   resources :tracks do
     resources :presentations
   end
+
+  resources :presentations
   
   
 
