@@ -303,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   bcrypt
   better_errors
   binding_of_caller
