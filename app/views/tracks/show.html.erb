@@ -1,16 +1,14 @@
 <h2>The Track is: <%= @track.name %></h2>
 
+<h3>Presenters:</h3>
+
 	<ul class= "track-list">
 		<% @track.presentations.each do |presentation| %>
 			<li><%= link_to "#{presentation.name}", presentation_path(presentation)%></li>
 		<% end %>	
 	</ul>
 
-	<div class= "track-form">
-	<%= form "event-#{@event.id}" do |f| %>
-			<%= f.text_field :email, class: "form-control", placeholder: "email" %>
+	<h3 class="center"><button type="submit" class="button button-large button-highlight">MailJet that Shit!</button></h3>
 
-			<%= f.hidden_field :event_id, value: @event.id %>
-			<button type="submit" class="button button-large button-highlight">Email Invitations</button>
-	<%end%>
-</div>
+<h2>
+
