@@ -16,16 +16,8 @@ def show
 end
 
 def send_email
-	# track_id = params["id"]
-	# @track = Track.find(track_id)
-	binding.pry
-	email_template = File.open()
-	Mailjet::MessageDelivery.create(
-		from: "dunphy.ben@gmail.com", 
-		to: ["jwrobes@gmail.com", "j3pydev@gmail.com"],
-		subject: "Mailjet Test",
-		html: "This is a test"
-	)
+	emails = Task_Runner.parse_emails(params)
+	Task_Runner.send_email(emails)
 end
 
 

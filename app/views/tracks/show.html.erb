@@ -7,10 +7,10 @@
 </ul>
 <h2>Emails for Presenters</h2>
 <div class= "track-form">
-	<%= form_tag('/tracks/send_email', remote: true) do %>
-			<%= text_field :email1, class: "form-control", placeholder: "email1" %>
-			<%= text_field :email2, class: "form-control", placeholder: "email2" %>
-			<%= text_field :email3, class: "form-control", placeholder: "email3" %>
+	<%= form_tag('/tracks/send_email', method: 'POST', remote: true) do %>
+			<%= text_field_tag('email1', nil, class: "form-control")%>
+			<%= text_field_tag('email2', nil, class: "form-control")%>
+			<%= text_field_tag('email3', nil, class: "form-control")%>
 			<button type="submit" class="button button-large button-highlight">Send Emails</button>
 	<%end%> 
 </div>
