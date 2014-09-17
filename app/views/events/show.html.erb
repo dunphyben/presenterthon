@@ -1,4 +1,6 @@
-<h2>The event is: <%= @event.name %></h2>
+<h2>Current Tracks for <%= @event.name %></h2>
+<p>A track is a time slot for a series of presentations.</br>
+<em>i.e. Sponsor Morning Presentations</em></p>
 
 <div class="tracks">
 	<ul class= "track-list">
@@ -27,6 +29,8 @@
 			<input type="textbox" class="form-control" name="country" placeholder="Country">
 			<input type="hidden" id="event-id" name="event_id" value=#{@event.id} /> -->
 			<%= f.hidden_field :event_id, value: @event.id %>
+			<br>
 			<button type="submit" class="button button-large button-highlight">New Event</button>
 	<%end%>
+	<br>
 </div>

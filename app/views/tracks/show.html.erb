@@ -1,12 +1,15 @@
 <h2>The Track is: <%= @track.name %></h2>
 
-	<ul class= "track-list">
-		<% @track.presentations.each do |presentation| %>
-			<li><%= link_to "#{presentation.name}", presentation_path(presentation)%></li>
-		<% end %>	
+<h3>Presenters:</h3>
+
+<ul class= "track-list">
+	<% @track.presentations.each do |presentation| %>
+		<li><%= link_to "#{presentation.name}", presentation_path(presentation)%></li>
+	<% end %>	
 </ul>
+
 <h2>Emails for Presenters</h2>
-<div class= "track-form">
+<div class= "email-form">
 	<%= form_tag('/tracks/send_email', method: 'POST', remote: true) do %>
 			<%= text_field_tag('email1', nil, class: "form-control")%>
 			<%= text_field_tag('email2', nil, class: "form-control")%>
@@ -14,3 +17,4 @@
 			<button type="submit" class="button button-large button-highlight">Send Emails</button>
 	<%end%> 
 </div>
+
