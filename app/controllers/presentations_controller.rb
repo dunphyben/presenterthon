@@ -9,7 +9,7 @@ class PresentationsController < ApplicationController
 		@presentation = Presentation.new({name: presentation_params[:name]})
 		@track = Track.find(presentation_params[:track_id])
 		@track.presentations << @presentation
-		binding.pry
+		# binding.pry
 		render json: {success: true, name: @presentation.name, id: @presentation.id }
 
 	end
@@ -19,7 +19,7 @@ class PresentationsController < ApplicationController
 	end
 
 	def send_email
-		binding.pry
+		# binding.pry
 	end
 
 end
