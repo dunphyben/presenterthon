@@ -27,14 +27,14 @@ How do we authenticate the Presenter to upload to a track?
 
 
 	if host_logged_in, Event.track-SPECIFIC page shows:
-		Presenter_name | Presentation_name | Uploaded? 
+		user.name | user.presentation_name | user.email | Uploaded? 
 		&&
 		"#{number_of_uploads}/#{number_of_invites}
 		&& 
 		Event.track.time_remaining_until_close
 
 	if host_logged_in, Event.track-GENERIC page shows:
-		Presenter_name | Presentation_name | Uploaded? 
+		user.name | user.presentation_name | user.email | Uploaded? 
 		&&
 		"#{number_of_uploads}"
 		&& 

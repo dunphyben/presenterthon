@@ -15,9 +15,10 @@ root to: 'landing_page#index'
   resources :tracks do
     resources :presentations
   end
-
+ 
   resources :presentations
-  
+
+    
   
   post "tracks/send_email" => 'tracks#send_email'
 
