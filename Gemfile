@@ -23,6 +23,7 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'pundit' # authorization
 gem 'mailjet', git: 'https://github.com/mailjet/mailjet-gem.git'
 gem 'nokogiri'
+gem 'actionmailer'
 
 group :development do
   gem 'better_errors'
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'faker'
-  gem 'pry'
   gem 'dotenv-rails'
   gem 'rerun'
   gem 'pry'
