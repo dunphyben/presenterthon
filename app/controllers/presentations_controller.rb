@@ -9,9 +9,23 @@ class PresentationsController < ApplicationController
 		@presentation = Presentation.new({name: presentation_params[:name]})
 		@track = Track.find(presentation_params[:track_id])
 		@track.presentations << @presentation
-		binding.pry
+		# binding.pry
 		render json: {success: true, name: @presentation.name, id: @presentation.id }
 
+	end
+
+	def update
+		@presentation = Presentation.find(params[:id])
+		if params[:presentation]
+			@presentation.file = params[:presentation][:file]
+			@presentation.save
+			flash.now[:alert] = "File was uploaded"
+			render "show"
+		else
+			flash.now[:alert] = "No File was selected to upload"
+			render "show"
+		end
+		
 	end
 
 	def show
@@ -19,7 +33,7 @@ class PresentationsController < ApplicationController
 	end
 
 	def send_email
-		binding.pry
+		# binding.pry
 	end
 
 end

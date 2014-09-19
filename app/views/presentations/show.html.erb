@@ -1,4 +1,22 @@
-<h1 class="host">Presenter: <%= @presentation.name %></h1>
+<div class="presentation-form">
 
+	<h1 class="host">Presenter: <%= @presentation.name %></h1>
 
-<h3 class="center"><button type="submit" class="button button-large button-highlight">Upload Presentation</button></h3>
+	<% if @presentation.file_file_name %>
+		<p>You have uploaded: <%= @presentation.file_file_name %></p>
+	<% else %>
+		<p>Please upload the your presentation.</p>
+	<% end %>
+
+	<%= form_for @presentation do |f| %>
+<!-- 		<span class="btn btn-default btn-file">
+			Select File<input type="file">
+		</span>
+
+		<br>	 -->
+		<%= f.file_field :file %>
+		<br>
+		<button type="submit" class="btn btn-default">Upload Presentation</button>
+	<% end %>
+
+</div>
