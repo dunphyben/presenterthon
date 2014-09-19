@@ -14,6 +14,20 @@ class PresentationsController < ApplicationController
 
 	end
 
+	def update
+		@presentation = Presentation.find(params[:id])
+		if params[:presentation]
+			@presentation.file = params[:presentation][:file]
+			@presentation.save
+			flash.now[:alert] = "File was uploaded"
+			render "show"
+		else
+			flash.now[:alert] = "No File was selected to upload"
+			render "show"
+		end
+		
+	end
+
 	def show
 		@presentation = Presentation.find(params[:id])
 	end
