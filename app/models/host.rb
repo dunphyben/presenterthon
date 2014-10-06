@@ -5,5 +5,6 @@ class Host < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events
-  has_many :host_users
+  has_many :host_users # host_user needs host_id foreign key
+  
 end

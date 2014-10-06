@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140919205746) do
-=======
-ActiveRecord::Schema.define(version: 20140917233009) do
->>>>>>> 685f97bb9b7a222a033fc5d4ceafff8b8b98e634
+ActiveRecord::Schema.define(version: 20141006210147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140917233009) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "host_id"
+    t.string   "slug"
   end
 
   create_table "host_users", force: true do |t|
@@ -86,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140917233009) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.string   "slug"
   end
 
   create_table "presentations_tracks", id: false, force: true do |t|
@@ -114,6 +112,7 @@ ActiveRecord::Schema.define(version: 20140917233009) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
+    t.string   "slug"
   end
 
   create_table "users", force: true do |t|
@@ -134,6 +133,7 @@ ActiveRecord::Schema.define(version: 20140917233009) do
     t.boolean  "admin",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

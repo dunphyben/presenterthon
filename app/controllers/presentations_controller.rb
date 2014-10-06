@@ -29,7 +29,7 @@ class PresentationsController < ApplicationController
 	end
 
 	def show
-		@presentation = Presentation.find(params[:id])
+		@presentation = Presentation.friendly.find(params[:id])
 	end
 
 	def send_email

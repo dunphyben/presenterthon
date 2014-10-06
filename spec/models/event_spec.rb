@@ -7,14 +7,14 @@ require 'spec_helper'
 
 # end
 
-describe Event do 
+  describe Event do 
 	it { should have_many :tracks }
 	it { should belong_to :host } # change to User
 
-describe 'slugged' do
+  describe 'slugged' do
     it 'should add dashes between the event name' do
-      test_event = Event.create({:name => 'My Awesome Presentation'})
-      test_event.slug.should eq "my-awesome-presentation"
+      test_event = Event.create({:name => 'My Awesome Event'})
+      test_event.slug.should eq "my-awesome-event"
     end
   end
 

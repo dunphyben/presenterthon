@@ -8,8 +8,13 @@ def create
 end
 
 def show
-	@event = Event.find(params[:id])
+	@event = Event.friendly.find(params[:id])
+	respond_to do |format|
+      format.html
+      format.json { render :json => @event }
+    end
 end
+
 
 
 # def event_params()
@@ -18,5 +23,8 @@ end
 # 		while_listed[:data] = params[:event][:data]
 #   end
 # end
+def event_params
+    params.require(:event).permit(:name, :phone, :url1, :url2, :location_name, :street, :street_number, :city, :state, :zip, :country, :slug)
+  end
 
 end

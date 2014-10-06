@@ -12,7 +12,10 @@ end
 
 def show
 	track_id = params["id"]
-	@track = Track.find(track_id)
+	@track = Track.friendly.find(track_id)
+	respond_to do |format|
+      format.html
+      format.json { render :json => @track }
 end
 
 def send_email
