@@ -14,10 +14,10 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'kaminari'
 gem 'friendly_id'
 gem 'devise'
-gem 'textacular'
+# gem 'textacular'
 gem 'therubyracer'
 gem 'rest_client'
-gem 'jquery-star-rating-rails'
+# gem 'jquery-star-rating-rails'
 gem 'nested_form'
 gem 'paper_trail', '~> 3.0.1'
 gem 'pundit' # authorization
@@ -29,7 +29,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
-  gem "letter_opener"
+  # gem "letter_opener"
   gem 'mailcatcher', '0.2.4'
   gem 'meta_request'
   gem 'spring'
