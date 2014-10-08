@@ -1,28 +1,26 @@
-
 class TracksController < ApplicationController
 
+	def create
+		track_params = params["track"]
+		@track = Track.new({name: track_params[:name]})
+		@event = Event.find(track_params[:event_id])
+		@event.tracks << @track
+		render json: {success: true, name: @track.name, id: @track.id }
+	end
 
-def create
-	track_params = params["track"]
-	@track = Track.new({name: track_params[:name]})
-	@event = Event.find(track_params[:event_id])
-	@event.tracks << @track
-	render json: {success: true, name: @track.name, id: @track.id }
-end
-
-def show
-	track_id = params["id"]
-	@track = Track.friendly.find(track_id)
-	respond_to do |format|
+	def show
+		track_id = params["id"]
+		@track = Track.friendly.find(track_id)
+		respond_to do |format|
       format.html
       format.json { render :json => @track }
-end
+    end
+	end
 
-def send_email
-	emails = Task_Runner.parse_emails(params)
-	Task_Runner.send_email(emails)
-end
-
+	def send_email
+		emails = Task_Runner.parse_emails(params)
+		Task_Runner.send_email(emails)
+	end
 
 # def event_params()
 # 	binding.pry
